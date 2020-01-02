@@ -10,19 +10,18 @@ function typeWriter() {
   }
 }
 
-function fadeOut() {
-    var fadeTarget = document.getElementById("demo");
+function fadeIn(fadeTarget) {
+  fadeTarget.style.opacity = 0;
     var fadeEffect = setInterval(function () {
-        if (!fadeTarget.style.opacity) {
-            fadeTarget.style.opacity = 1;
-        }
-        if (fadeTarget.style.opacity > 0) {
-            fadeTarget.style.opacity -= 0.1;
+        if (fadeTarget.style.opacity < 1) {
+            fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.1;
         } else {
             clearInterval(fadeEffect);
-            console.log("done");
         }
     }, 50);
 }
 
-window.onload = typeWriter;
+window.onload = function(){
+  typeWriter();
+  fadeIn(document.getElementById("name"));
+};

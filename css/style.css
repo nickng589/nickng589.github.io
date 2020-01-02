@@ -1,5 +1,10 @@
 
 @import "reset.css";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
 }
@@ -15,18 +20,43 @@ p {
   padding: 20px;
 }
 
-#id h1.content{
-  color: black;
-  font-size: 18px;
+header {
+  background-color: #000000;
+  color: #ffffff;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+ul {
+  margin: 30px auto;
+  text-align: center;
+  margin: 20px auto;
+  padding: 0px;
+}
+
+li {
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 50px;
+}
+
+#name{
+  color: #000000;
+  font-size: 30px;
   font-weight: 700;
   letter-spacing: 4px;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  padding: 20px;
+  margin-bottom: 100px;
+  padding: 40px;
+  position: relative;
+  top: 50px;
 }
 
 #intro {
   background-color: #F2F2F2;
   text-align: center;
+  width: 100%;
 }
