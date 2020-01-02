@@ -20,6 +20,7 @@ function fadeOut() {
             fadeTarget.style.opacity -= 0.1;
         } else {
             clearInterval(fadeEffect);
+            console.log("done");
         }
     }, 50);
 }
