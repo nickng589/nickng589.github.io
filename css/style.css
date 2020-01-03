@@ -4,10 +4,13 @@
 * {
   box-sizing: border-box;
 }
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Raleway', sans-serif;
-
 }
 
 div {
@@ -31,6 +34,19 @@ header {
   z-index: 10;
 }
 
+footer{
+  padding: 10px 10px;
+  font-size: 15px;
+  line-height: 20px;
+  display: block;
+  height: 130px;
+}
+
+footer p{
+  padding: 30px 50px;
+  display:inline-block;
+}
+
 ul {
   text-align: center;
   margin: 20px auto;
@@ -44,6 +60,21 @@ li {
   text-transform: uppercase;
   display: inline-block;
   margin: 0 50px;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 10px;
+}
+
+a img {
+  border: none;
+}
+
+li a:hover {
+  text-decoration: underline;
 }
 
 .gray {
@@ -60,7 +91,7 @@ li {
 
 .title {
   font-size: 75px;
-  padding: 40px 40px;
+  padding: 60px 40px;
   font-weight: 500;
 }
 
@@ -80,8 +111,26 @@ li {
   width: 100%;
 }
 
+#social {
+  height: 50px;
+  width: 50px;
+}
+
 #skills , #blinker{
   display: inline-block;
   padding: 0px;
   margin: 0px;
+}
+
+#contact{
+  height: 30px;
+  text-align: center;
+  display:block;
+}
+
+#contactWrapper{
+  text-align: center;
+  float: right;
+  height: 50px;
+  padding-right: 50px;
 }
