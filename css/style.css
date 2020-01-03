@@ -7,10 +7,11 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+
 }
 
 div {
-  height: 500px;
+  height: 750px;
 }
 
 p {
@@ -18,9 +19,8 @@ p {
   font-size: 25px;
   font-weight: 500;
   letter-spacing: 4px;
-  margin: 0;
   line-height: 40px;
-  margin: 20px 50px;
+  padding: 20px 60px;
 }
 
 header {
@@ -60,7 +60,7 @@ li {
 
 .title {
   font-size: 75px;
-  padding: 20px 20px;
+  padding: 40px 40px;
   font-weight: 500;
 }
 
