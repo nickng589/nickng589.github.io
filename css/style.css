@@ -10,11 +10,12 @@ html {
 }
 
 body {
+  height: 100%;
   font-family: 'Raleway', sans-serif;
 }
 
 div {
-  height: 750px;
+  height: 100%;
 }
 
 p {
@@ -36,7 +37,7 @@ header {
 
 footer{
   padding: 10px 10px;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 20px;
   display: block;
   height: 130px;
@@ -49,7 +50,7 @@ footer p{
 
 ul {
   text-align: center;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 0px;
 }
 
