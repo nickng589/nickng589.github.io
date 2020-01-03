@@ -1,39 +1,47 @@
 var i = 0;
-var txt = 'Lorem ipsum dummy text blabla.';
-var speed = 50;
-var deleting = false;
+var typeSpeed = 100;
+var blinkSpeed = 300;
+var blinkCount = 5;
+var skills = ["first", "second", "third"];
+var index = 0;
+var counter = 0;
 
-function typeWriter() {
-  /*
+function write(){
+  var txt = skills[index];
   if (i < txt.length) {
     document.getElementById("skills").innerHTML += txt.charAt(i);
     i++;
-    setTimeout(typeWriter, speed);
+    setTimeout(write, typeSpeed);
+  } else {
+    i = 0;
+    setTimeout(blink, blinkSpeed);
   }
-  */
-  var typeEffect = setInterval(function () {
-    console.log("repeat");
-    if(i < txt.length){
-      document.getElementById("skills").innerHTML += txt.charAt(i);
-      i++;
-    } else {
-      console.log("start delete");
-      deleteLetters(document.getElementById("skills"));
-    }
-  }, 50);
 }
 
-function deleteLetters(element){
-  var length = element.innerHTML.length;
-  var deleteEffect = setInterval(function() {
-    if (length > 0){
-      element.innerHTML = element.innerHTML.substring(0, length -1);
+function blink(){
+  if(counter < blinkCount){
+    if(blinker.style.opacity == 1){
+      blinker.style.opacity = 0;
     } else {
-      clearInterval(deleteEffect);
-      i = 0;
-      console.log('delete');
+      blinker.style.opacity = 1;
+      counter += 1;
     }
-  }, 50);
+    setTimeout(blink, blinkSpeed);
+  } else {
+    counter = 0;
+    setTimeout(del, typeSpeed);
+  }
+}
+
+function del(){
+  var element = document.getElementById("skills");
+  element.innerHTML = element.innerHTML.substring(0, element.innerHTML.length -1);
+  if(element.innerHTML.length <= 0){
+    setTimeout(write, 100);
+    index = (index + 1) % skills.length;
+  } else {
+    setTimeout(del, typeSpeed);
+  }
 }
 
 function fadeIn(fadeTarget) {
@@ -44,10 +52,10 @@ function fadeIn(fadeTarget) {
         } else {
             clearInterval(fadeEffect);
         }
-    }, 50);
+    }, 75);
 }
 
 window.onload = function(){
-  typeWriter();
+  write();
   fadeIn(document.getElementById("name"));
 };

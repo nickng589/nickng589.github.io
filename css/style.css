@@ -9,27 +9,29 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+div {
+  height: 500px;
+}
+
 p {
-  color: black;
-  font-size: 18px;
-  font-weight: 700;
+  color: #000;
+  font-size: 25px;
+  font-weight: 500;
   letter-spacing: 4px;
   margin: 0;
-  padding: 0;
-  text-align: center;
-  padding: 20px;
+  line-height: 40px;
+  padding: 20px 60px;
 }
 
 header {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000;
+  color: #FFF;
   width: 100%;
   position: fixed;
   z-index: 10;
 }
 
 ul {
-  margin: 30px auto;
   text-align: center;
   margin: 20px auto;
   padding: 0px;
@@ -44,19 +46,41 @@ li {
   margin: 0 50px;
 }
 
+.gray {
+  background-color: #F2F2F2;
+}
+
+.white {
+  background-color: #FFF;
+}
+
+.typer {
+  font-size: 30px;
+}
+
+.title {
+  font-size: 75px;
+  margin: 20px 20px;
+  font-weight: 500;
+}
+
 #name{
   color: #000000;
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 100px;
+  font-weight: 500;
   letter-spacing: 4px;
-  margin-bottom: 100px;
-  padding: 40px;
+  padding-top: 200px;
+  padding-bottom: 50px;
   position: relative;
-  top: 50px;
 }
 
 #intro {
-  background-color: #F2F2F2;
+  height: 800px;
   text-align: center;
   width: 100%;
+}
+
+#skills , #blinker{
+  display: inline-block;
+  padding: 0px;
 }
