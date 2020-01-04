@@ -2,7 +2,7 @@ var i = 0;
 var typeSpeed = 100;
 var blinkSpeed = 300;
 var blinkCount = 5;
-var skills = ["first", "second", "third"];
+var skills = ["Computer Scientist", "Data Scientist", "Educator", "Website Designer", "Game Designer"];
 var index = 0;
 var counter = 0;
 
@@ -14,22 +14,22 @@ function write(){
     setTimeout(write, typeSpeed);
   } else {
     i = 0;
-    setTimeout(blink, blinkSpeed);
+    index = (index + 1) % skills.length;
+    setTimeout(function(){blink(5, del)}, blinkSpeed);
   }
 }
 
-function blink(){
-  if(counter < blinkCount){
+function blink(blinkCount, nextAni){
+  if(blinkCount != 0){
     if(blinker.style.opacity == 1){
       blinker.style.opacity = 0;
+      setTimeout(function(){blink(blinkCount, nextAni)}, blinkSpeed);
     } else {
       blinker.style.opacity = 1;
-      counter += 1;
+      setTimeout(function(){blink(blinkCount - 1, nextAni)}, blinkSpeed);
     }
-    setTimeout(blink, blinkSpeed);
   } else {
-    counter = 0;
-    setTimeout(del, typeSpeed);
+    setTimeout(nextAni, typeSpeed);
   }
 }
 
@@ -37,25 +37,24 @@ function del(){
   var element = document.getElementById("skills");
   element.innerHTML = element.innerHTML.substring(0, element.innerHTML.length -1);
   if(element.innerHTML.length <= 0){
-    setTimeout(write, 100);
-    index = (index + 1) % skills.length;
+    setTimeout(blink(3, write), 100);
   } else {
     setTimeout(del, typeSpeed);
   }
 }
 
-function fadeIn(fadeTarget) {
+function fadeIn(fadeTarget, speed, interval) {
   fadeTarget.style.opacity = 0;
     var fadeEffect = setInterval(function () {
         if (fadeTarget.style.opacity < 1) {
-            fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + 0.1;
+            fadeTarget.style.opacity = parseFloat(fadeTarget.style.opacity) + interval;
         } else {
             clearInterval(fadeEffect);
         }
-    }, 75);
+    }, speed);
 }
 
 window.onload = function(){
-  write();
-  fadeIn(document.getElementById("name"));
+  setTimeout(function(){blink(3, write)}, 1/.1*75);
+  fadeIn(document.getElementById("name"), 75, .1);
 };
