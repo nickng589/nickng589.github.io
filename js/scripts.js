@@ -55,6 +55,6 @@ function fadeIn(fadeTarget, speed, interval) {
 }
 
 window.onload = function(){
-  setTimeout(function(){blink(3, write)}, 1/.1*75);
+  setTimeout(function(){blink(2, write)}, 1/.1*75);
   fadeIn(document.getElementById("name"), 75, .1);
 };
