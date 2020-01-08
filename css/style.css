@@ -19,8 +19,8 @@ div {
 
 p {
   font-size: 25px;
-  font-weight: 500;
-  letter-spacing: 4px;
+  font-weight: 400;
+  letter-spacing: 3px;
   line-height: 40px;
 }
 
@@ -75,6 +75,10 @@ li a:hover {
   text-decoration: underline;
 }
 
+a:visited #resume{
+  color: blue;
+}
+
 .gray {
   background-color: #F2F2F2;
 }
@@ -121,7 +125,7 @@ li a:hover {
 }
 
 .project-container:hover .project-image{
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 .project-container:hover .overlay{
@@ -135,10 +139,13 @@ li a:hover {
 }
 
 .project-image img {
-  -webkit-box-shadow: 10px 10px 23px 0px rgba(115,115,115,1);
--moz-box-shadow: 10px 10px 23px 0px rgba(115,115,115,1);
-box-shadow: 10px 10px 23px 0px rgba(115,115,115,1);
-  width: 50%;
+  -webkit-box-shadow: 10px 10px 28px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 28px -11px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 28px -11px rgba(0,0,0,0.75);
+  width: 60%;
+  position: absolute;
+  left: 5%;
+  top: 5%;
 }
 
 .overlay {
@@ -188,6 +195,10 @@ box-shadow: 10px 10px 23px 0px rgba(115,115,115,1);
 #contact{
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+#resume{
+  color: blue;
 }
 
 #contactWrapper{
