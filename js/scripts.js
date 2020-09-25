@@ -1,7 +1,7 @@
 var i = 0;
-var typeSpeed = 100;
+var typeSpeed = 50;
 var blinkSpeed = 300;
-var blinkCount = 5;
+var blinkCount = 2;
 var skills = ["Computer Scientist", "Data Scientist", "Educator", "Website Designer", "Game Designer"];
 var index = 0;
 var counter = 0;
@@ -15,7 +15,7 @@ function write(){
   } else {
     i = 0;
     index = (index + 1) % skills.length;
-    setTimeout(function(){blink(5, del)}, blinkSpeed);
+    setTimeout(function(){blink(blinkCount, del)}, blinkSpeed);
   }
 }
 
