@@ -1,7 +1,7 @@
 var i = 0;
 var typeSpeed = 50;
-var blinkSpeed = 300;
-var blinkCount = 2;
+var blinkSpeed = 200;
+var blinkCount = 1;
 var skills = ["Computer Scientist", "Data Scientist", "Educator", "Website Designer", "Game Designer"];
 var index = 0;
 var counter = 0;
@@ -15,7 +15,7 @@ function write(){
   } else {
     i = 0;
     index = (index + 1) % skills.length;
-    setTimeout(function(){blink(blinkCount, del)}, blinkSpeed);
+    setTimeout(function(){blink(2, del)}, blinkSpeed);
   }
 }
 
@@ -37,7 +37,7 @@ function del(){
   var element = document.getElementById("skills");
   element.innerHTML = element.innerHTML.substring(0, element.innerHTML.length -1);
   if(element.innerHTML.length <= 0){
-    setTimeout(blink(3, write), 100);
+    setTimeout(blink(blinkCount, write), 100);
   } else {
     setTimeout(del, typeSpeed);
   }
@@ -55,6 +55,6 @@ function fadeIn(fadeTarget, speed, interval) {
 }
 
 window.onload = function(){
-  blink(3, write);
+  blink(1, write);
   fadeIn(document.getElementsByTagName("BODY")[0], 37, .05);
 };
