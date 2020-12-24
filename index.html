@@ -36,6 +36,10 @@
     <p class=typer id = "blinker">|</p>
   </div>
 
+  <div id="app">
+    {{ message }}
+  </div>
+
   <!--INTRO-->
   <div class="gray page" id=about>
     <h2 class=title>ABOUT</h2>
@@ -134,5 +138,15 @@
       </a>
     </div>
   </footer>
+  <!-- production version, optimized for size and speed -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
+  </script>
 </body>
 <html>
