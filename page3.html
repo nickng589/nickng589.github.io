@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nicholas Ng</title>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39170727-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-39170727-2');
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,600,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+</head>
+
+<body>
+  <header id=nav>
+    <ul>
+      <li><a href=#intro>Home</a></li>
+      <li><a href=#about>About</a></li>
+      <li><a href=#projects>Projects</a></li>
+      <li><a href=#contact>Contact</a></li>
+    </ul>
+  </header>
+
+ <!--TITLE PAGE-->
+  <div class="white page" id=intro>
+    <h1 id=name>NICHOLAS NG</h1>
+    <div id="app" class = "typewriter_wrapper">
+      <Typewriter :words="['Computer Scientist', 'Data Scientist', 'Educator', 'Website Designer', 'Game Designer']"> </Typewriter>
+    </div>
+    <!--
+    <p class=typer id="skills"></p>
+    <p class=typer id = "blinker">|</p>
+    -->
+  </div>
+  <!--
+  <div id="app">
+    {{ message }}
+  </div>
+  TITLE PAGE-->
+  <!--INTRO-->
+  <div class="gray page" id=about>
+    <h2 class=title>ABOUT</h2>
+  <!--
+    <div class="wrapper">
+      <div class="centered-image">
+        <img src="img/self/profile_pic.jpg">
+      </div>
+    </div>
+  -->
+    <p class=content> Hey! My name is Nicholas, I am a third year computer science major
+    attending Cal.  I am interested in data science, computer science education,
+    and video game design.  Check out my <a id="resume" href="assets/NicholasNg_resume.pdf">resume</a> for more details of my
+    experience</p>
+  </div>
+
+  <!--PROJECTS-->
+  <div class="white page" class=page id=projects>
+    <h2 class=title>PROJECTS</h2>
+    <div class="flex-container">
+      <div class="wrapper">
+        <a href="https://github.com/nickng589/nickng589.github.io" target="_blank">
+          <div class="project-container">
+            <div class="project-image gray">
+              <div class = "middle_img">
+                <img src="img/project_pics/websitepic2.png">
+              </div>
+              <div class = "top_left_img">
+                <img src="img/project_pics/websitepic.png">
+              </div>
+            </div>
+            <div class="overlay">
+              <p>
+                Website
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="wrapper">
+        <a href="https://itch.io/queue/c/850031/gdd-spring-2020-showcase?game_id=586504" target="_blank">
+          <div class="project-container">
+            <div class="project-image gray">
+              <div class = "middle_img">
+                <img src="img/project_pics/clone2.jpg">
+              </div>
+              <div class = "top_left_img">
+                <img src="img/project_pics/clone.png">
+              </div>
+            </div>
+            <div class="overlay">
+              <p>
+                Clone
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="wrapper">
+        <a href="https://devpost.com/software/econscious-xt3s1c" target="_blank">
+          <div class="project-container">
+            <div class="project-image gray">
+              <div class = "middle_img">
+                <img src="img/project_pics/Econscious2.jpg">
+              </div>
+              <div class = "top_left_img">
+                <img src="img/project_pics/Econscious1.jpg">
+              </div>
+            </div>
+            <div class="overlay">
+              <p>
+                Econscious
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--FOOTER-->
+  <footer class=gray>
+    <p>©2020 Nicholas Ng</p>
+    <div id=contactWrapper>
+      <div id =contact>
+      Contact
+      </div>
+      <a href="https://github.com/nickng589" target="_blank">
+        <img class=social src="img/social/github.png" alt="Github">
+      </a>
+      <a href="https://www.linkedin.com/in/nicholas-ng-9ba495192/" target="_blank">
+        <img class=social src="img/social/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="mailto:nickng589@berkeley.edu" target="_top">
+        <img class=social src="img/social/gmail.png" alt="Gmail">
+      </a>
+    </div>
+  </footer>
+  <script id="typewriter">
+    <span>
+        {{ displayText.join("") }}
+    </span>
+  </script>
+  <!-- production version, optimized for size and speed -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    Vue.component('Typewriter', {
+    template: '#typewriter',
+     props: {
+      speed: {
+        type: Number,
+        default: 100
+      },
+      typeSpeed: {
+        type: Number,
+        default: 50
+      },
+      deleteSpeed: {
+        type: Number,
+        default: 50
+      },
+      pauseTime: {
+        type: Number,
+        default: 750
+      },
+      words: {
+        type: Array,
+        default: []
+      }
+    },
+    data() {
+      return {
+        fontSize: 100,
+        displayText: [],
+        currentWord: "",
+        wordIdx: 0,
+      };
+    },
+    computed: {
+      // can adjust speeds based on other factors if needed
+      TYPE_SPEED() { return this.typeSpeed } ,
+      DELETE_SPEED(){ return this.deleteSpeed },
+      PAUSE_TIME() { return this.pauseTime},
+    },
+    mounted() {
+      this.start();
+    },
+    methods: {
+      start() {
+        if (this.words && this.words.length > 0) {
+          this.currentWord = this.words[this.wordIdx].split("");
+          this.wordIdx++;
+          this.animate = setTimeout(this.type, this.speed);
+        }
+      },
+      type(word) {
+        // if typing...
+        if (this.currentWord.length > 0) {
+          this.displayText.push(this.currentWord.shift());
+          this.speed = this.TYPE_SPEED;
+          if (this.currentWord.length === 0) {
+            this.speed = this.PAUSE_TIME;
+          }
+          // if done typing, then delete
+        } else if (this.currentWord.length === 0 && this.displayText.length > 0) {
+          this.speed = this.DELETE_SPEED;
+          this.displayText.pop();
+          // if done typing & deleting
+        } else if (
+          this.currentWord.length === 0 &&
+          this.displayText.length === 0
+        ) {
+          // change words
+          if (this.wordIdx < this.words.length) {
+            this.currentWord = this.words[this.wordIdx].split("");
+            this.wordIdx++;
+            this.displayText.push(this.currentWord.shift());
+          } else {
+            // reset
+            this.wordIdx = 0;
+            this.currentWord = this.words[this.wordIdx].split("");
+            this.displayText.push(this.currentWord.shift());
+          }
+          this.speed = this.TYPE_SPEED;
+        }
+        setTimeout(this.type, this.speed);
+      }
+    }
+    });
+
+
+  const app = new Vue({
+    el: '#app'
+  });
+  </script>
+</body>
+<html>

@@ -180,6 +180,10 @@ a:visited #resume{
   padding:20px;
 }
 
+.typewriter_wrapper{
+  font-size: 30px;
+}
+
 .social {
   height: 50px;
   width: 50px;
