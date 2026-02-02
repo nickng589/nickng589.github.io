@@ -2,7 +2,7 @@ var i = 0;
 var typeSpeed = 50;
 var blinkSpeed = 200;
 var blinkCount = 1;
-var skills = ["Computer Scientist", "Data Scientist", "Educator", "Website Designer", "Game Designer", "Matcha Enthusiast"];
+var skills = ["Software Engineer", "Data Scientist", "Educator", "Website Designer", "Game Designer", "Matcha Enthusiast"];
 var index = 0;
 var counter = 0;
 
